@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Signika, sans-serif;
+    background-color: #1A1917;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #E3623B;
+    color: white;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-shadow: 0px 2px 3px rgb(142, 48, 48);
+    box-shadow: 0px 3px 12px rgb(142, 48, 48);
+    transition: background-color .3s, box-shadow .4s;
+}
+.btn:hover{
+    background-color: #e3bc3b;
+    box-shadow: 0px 3px 12px rgb(196, 165, 30);
+    text-shadow: 0px 2px 3px rgb(29, 29, 29);
+}
+
+.tshadow{
+    text-shadow: 1px 2px 3px rgb(12, 12, 12);
+}
+
+.navActiveTextColor {
+    color: white;
+}
+.navTextColor {
+    color: rgb(255, 255, 255);
+}
+
+/* Costomize scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #3b3b3b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(154, 131, 105);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(162, 148, 135);
+}
+/* ----------------------- */
