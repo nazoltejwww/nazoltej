@@ -37,11 +37,11 @@ const Kontakt = () => {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...formState }),
         })
-            .then(() =>
-                alert(
-                    "Dziękujemy za wysłanie formularza. Skontaktujemy się z Państwem najszybciej jak to możliwe."
-                )
-            )
+            // .then(() =>
+            //     alert(
+            //         "Dziękujemy za wysłanie formularza. Skontaktujemy się z Państwem najszybciej jak to możliwe."
+            //     )
+            // )
             .catch((error) => alert(error));
 
         e.preventDefault();
@@ -230,7 +230,7 @@ l25 -28 -3 -200 c-3 -196 -3 -200 -27 -219 -22 -18 -44 -19 -395 -19 l-373 0
                         >
                             <form
                                 name="contact"
-                                action="/dziekujemy"
+                                action="/pages/dziekujemy"
                                 method="POST"
                                 data-netlify="true"
                                 onSubmit={handleSubmit}
