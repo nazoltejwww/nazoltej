@@ -96,42 +96,52 @@ const Header = () => {
                                 : "absolute top-full left-0 py-2 flex flex-col lg:opacity-100 lg:static lg:flex lg:flex-row lg:items-center lg:justify-end lg:top-0 lg:translate-x-0 lg:py-0 text-main text-center w-full opacity-0 -translate-x-full transition duration-100 -z-10 lg:z-10 lg:ml-8"
                         }
                     >
-                        <Link
-                            aria-label="Strona Główna"
-                            className="mx-2 my-2 px-2 py-3 hover:text-orange-400 transition-colors duration-200"
-                            to="/"
-                        >
-                            Home
-                        </Link>
+                        <li className="mx-2 my-2 px-2 py-3" >
+                            <Link
+                                aria-label="Strona Główna"
+                                className="hover:text-orange-400 transition-colors duration-200"
+                                to="/"
+                            >
+                                Home
+                            </Link>
+                        </li>
 
-                        <Link
-                            aria-label="O Nas"
-                            className="mx-2 my-2 px-2 py-3 hover:text-orange-400 transition-colors duration-200"
-                            to="/oNas"
-                        >
-                            O Nas
-                        </Link>
-                        <Link
-                            aria-label="Oferta"
-                            className="mx-2 my-2 px-2 py-3 hover:text-orange-400 transition-colors duration-200"
-                            to="/oferta"
-                        >
-                            Oferta
-                        </Link>
-                        <Link
-                            aria-label="Fakty i Mity"
-                            className="mx-2 my-2 px-2 py-3 hover:text-orange-400 transition-colors duration-200"
-                            to="/faktyMity"
-                        >
-                            Fakty & Mity
-                        </Link>
-                        <Link
-                            aria-label="Kontakt"
-                            className="mx-2 my-2 px-2 py-3 hover:text-orange-400 transition-colors duration-200"
-                            to="/kontakt"
-                        >
-                            Kontakt
-                        </Link>
+                        <li className="mx-2 my-2 px-2 py-3" >
+                            <Link
+                                aria-label="O Nas"
+                                className="hover:text-orange-400 transition-colors duration-200"
+                                to="/oNas"
+                            >
+                                O Nas
+                            </Link>
+                        </li>
+                        <li className="mx-2 my-2 px-2 py-3" >
+                            <Link
+                                aria-label="Oferta"
+                                className="hover:text-orange-400 transition-colors duration-200"
+                                to="/oferta"
+                            >
+                                Oferta
+                            </Link>
+                        </li>
+                        <li className="mx-2 my-2 px-2 py-3" >
+                            <Link
+                                aria-label="Fakty i Mity"
+                                className="hover:text-orange-400 transition-colors duration-200"
+                                to="/faktyMity"
+                            >
+                                Fakty & Mity
+                            </Link>
+                        </li>
+                        <li className="mx-2 my-2 px-2 py-3" >
+                            <Link
+                                aria-label="Kontakt"
+                                className="hover:text-orange-400 transition-colors duration-200"
+                                to="/kontakt"
+                            >
+                                Kontakt
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

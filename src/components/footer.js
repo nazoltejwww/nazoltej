@@ -21,10 +21,10 @@ const Footer = () => (
                 <Link
                     aria-label="seovileo.pl"
                     href="https://seovileo.pl/"
-                    class="text-gray-600 ml-1"
+                    class="text-gray-300 ml-1"
                     target="_blank"
                 >
-                    @seovileo
+                    @seovileo.pl
                 </Link>
             </p>
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
