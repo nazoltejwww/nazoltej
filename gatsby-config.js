@@ -10,7 +10,7 @@ module.exports = {
         siteUrl: `https://seovileo.pl/`,
     },
     plugins: [
-        `gatsby-plugin-scroll-reveal`,
+        // `gatsby-plugin-scroll-reveal`,
         "gatsby-plugin-netlify",
         {
             resolve: `gatsby-source-datocms`,

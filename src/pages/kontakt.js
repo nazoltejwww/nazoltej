@@ -1,10 +1,51 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
 const Kontakt = () => {
+    const [formState, setFormState] = useState({
+        imie: "",
+        tel: "",
+        mail: "",
+        wiadomość: "",
+    });
+
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(
+                (key) =>
+                    encodeURIComponent(key) +
+                    "=" +
+                    encodeURIComponent(data[key])
+            )
+            .join("&");
+    };
+
+    const handleChange = (e) => {
+        setFormState({
+            ...formState,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...formState }),
+        })
+            .then(() =>
+                alert(
+                    "Dziękujemy za wysłanie formularza. Skontaktujemy się z Państwem najszybciej jak to możliwe."
+                )
+            )
+            .catch((error) => alert(error));
+
+        e.preventDefault();
+    };
     return (
         <Layout>
             <section>
@@ -188,43 +229,44 @@ l25 -28 -3 -200 c-3 -196 -3 -200 -27 -219 -22 -18 -44 -19 -395 -19 l-373 0
                             className="bg-zinc-700/40 shadow-sm shadow-amber-200/10 p-4 lg:mx-6 lg:p-6 rounded-xl"
                         >
                             <form
-                                action="https://formsubmit.io/send/nazoltejwww@interia.pl"
+                                name="contact"
+                                action="/dziekujemy"
                                 method="POST"
-                                class="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto"
+                                data-netlify="true"
+                                onSubmit={handleSubmit}
+                                className="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto"
                             >
                                 <div>
-                                    <input
-                                        name="_redirect"
-                                        type="hidden"
-                                        id="name"
-                                        value="https://nażółtej.com/dziekujemy/"
-                                    />
-
                                     <label
-                                        htmlFor="first-name"
-                                        for="first-name"
+                                        htmlFor="imie"
+                                        for="imie"
                                         className="inline-block text-zinc-300  text-sm sm:text-base mb-2"
                                     >
                                         Imię
                                     </label>
                                     <input
-                                        name="first-name"
+                                        name="imie"
+                                        type="text"
                                         placeholder="Imię"
+                                        value={formState.imie}
+                                        onChange={handleChange}
                                         className="w-full bg-gray-50  border focus:ring ring-amber-300 rounded outline-none transition duration-100 px-3 py-2"
                                     />
                                 </div>
 
                                 <div>
                                     <label
-                                        htmlFor="phone"
-                                        for="phone"
+                                        htmlFor="tel"
+                                        for="tel"
                                         className="inline-block text-zinc-300 text-sm sm:text-base mb-2"
                                     >
                                         Tel
                                     </label>
                                     <input
-                                        name="phone"
+                                        name="tel"
                                         type="tel"
+                                        onChange={handleChange}
+                                        value={formState.tel}
                                         placeholder="+48 521 521 500"
                                         pattern="[0-9+]{9,12}"
                                         required
@@ -234,14 +276,16 @@ l25 -28 -3 -200 c-3 -196 -3 -200 -27 -219 -22 -18 -44 -19 -395 -19 l-373 0
 
                                 <div className="sm:col-span-2">
                                     <label
-                                        htmlFor="email"
-                                        for="email"
+                                        htmlFor="mail"
+                                        for="mail"
                                         className="inline-block text-zinc-300 text-sm sm:text-base mb-2"
                                     >
                                         Email
                                     </label>
                                     <input
-                                        name="email"
+                                        name="mail"
+                                        value={formState.mail}
+                                        onChange={handleChange}
                                         pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$"
                                         placeholder="email@nażółtej.pl"
                                         class="w-full bg-gray-50  border focus:ring ring-amber-300 rounded outline-none transition duration-100 px-3 py-2"
@@ -250,14 +294,16 @@ l25 -28 -3 -200 c-3 -196 -3 -200 -27 -219 -22 -18 -44 -19 -395 -19 l-373 0
 
                                 <div class="sm:col-span-2">
                                     <label
-                                        htmlFor="message"
-                                        for="message"
+                                        htmlFor="wiadomość"
+                                        for="wiadomość"
                                         className="inline-block text-zinc-300 text-sm sm:text-base mb-2"
                                     >
                                         Wiadomość
                                     </label>
                                     <textarea
-                                        name="message"
+                                        name="wiadomość"
+                                        value={formState.wiadomość}
+                                        onChange={handleChange}
                                         class="w-full h-64 bg-gray-50  border focus:ring ring-amber-300 rounded outline-none transition duration-100 px-3 py-2"
                                     ></textarea>
                                 </div>

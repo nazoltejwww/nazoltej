@@ -43,7 +43,7 @@ const FaktyMity = ({ data }) => {
                 {allDatoCmsFaktyMity.edges.map(({ node }) => (
                     <div
                         className="flex flex-col items-start justify-center my-6 md:my-8 lg:my-12 w-[90%] lg:w-[60vw]"
-                        key={node.id}
+                        key={node.id} style={{order: node.pozycja}}
                     >
                         {" "}
                         <h2 className="text-2xl lg:text-3xl flex items-center justify-center w-full text-center uppercase mb-2 text-yellow-500 tracking-wider shadowScale font-bold">
@@ -69,7 +69,7 @@ const FaktyMity = ({ data }) => {
 
 export const query = graphql`
     query MyQuery {
-        allDatoCmsFaktyMity(sort: { id: DESC }) {
+        allDatoCmsFaktyMity {
             edges {
                 node {
                     opis
@@ -78,6 +78,7 @@ export const query = graphql`
                         alt
                         gatsbyImageData(layout: FULL_WIDTH)
                     }
+                    pozycja
                 }
             }
         }
