@@ -42,7 +42,7 @@ const Kontakt = () => {
 
                             <div className="flex flex-col items-center justify-center mt-4">
                                 <Link
-                                    to="tel:515515515"
+                                    to="tel:698947754"
                                     className="text-white flex items-center w-full justify-center"
                                 >
                                     <svg
@@ -71,10 +71,10 @@ const Kontakt = () => {
                                             />
                                         </g>
                                     </svg>
-                                    <p>(+48)515-515-515</p>
+                                    <p>(+48)698-947-754</p>
                                 </Link>
                                 <Link
-                                    to="mailto:mail@mail.com.pl"
+                                    to="mailto:rejestracjanazolte@gmail.com"
                                     className="text-white flex items-center w-full justify-center mt-2"
                                 >
                                     <svg
@@ -111,7 +111,7 @@ const Kontakt = () => {
                                         </g>
                                     </svg>
 
-                                    <p>mail@mail.com.pl</p>
+                                    <p>rejestracjanazolte@gmail.com</p>
                                 </Link>
 
                                 <svg
