@@ -235,6 +235,7 @@ l25 -28 -3 -200 c-3 -196 -3 -200 -27 -219 -22 -18 -44 -19 -395 -19 l-373 0
                                 data-netlify="true"
                                 onSubmit={handleSubmit}
                                 className="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto"
+                                netlify
                             >
                                 <div>
                                     <label
