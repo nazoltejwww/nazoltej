@@ -2,7 +2,6 @@
     animation: shadowScale 2s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
         alternate-reverse both;
 }
-
 @keyframes shadowScale {
     0% {
         text-shadow: 0 0 18px rgb(255, 60, 0);
@@ -11,7 +10,6 @@
         text-shadow: 0 0 0 orange;
     }
 }
-
 .shadowScaleBtn {
     animation: shadowScaleBtn 3s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
         alternate-reverse both;
