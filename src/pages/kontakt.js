@@ -40,7 +40,7 @@ const Kontakt = () => {
             .then(
                 () =>
                     (window.location.href =
-                        "https://nazoltejwww.netlify.app/dziekujemy/")
+                        "https://nazoltej.netlify.app/dziekujemy/")
             )
             .catch((error) => alert(error));
 
