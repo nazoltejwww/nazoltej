@@ -37,11 +37,11 @@ const Kontakt = () => {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...formState }),
         })
-            // .then(() =>
-            //     alert(
-            //         "Dziękujemy za wysłanie formularza. Skontaktujemy się z Państwem najszybciej jak to możliwe."
-            //     )
-            // )
+            .then(
+                () =>
+                    (window.location.href =
+                        "https://nazoltejwww.netlify.app/dziekujemy/")
+            )
             .catch((error) => alert(error));
 
         e.preventDefault();
