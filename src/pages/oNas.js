@@ -59,7 +59,7 @@ const oNas = ({ data }) => {
                                     {node.kartaNaglowek1Copy1}
                                 </h2>
                                 <p className="leading-relaxed text-base mb-4">
-                                    {node.kartakartaMalyText1Copy1}
+                                    {node.kartaMalyText1Copy1}
                                 </p>
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
@@ -67,7 +67,7 @@ const oNas = ({ data }) => {
                                     {node.kartaNaglowek1Copy2}
                                 </h2>
                                 <p className="leading-relaxed text-base mb-4">
-                                    {node.kartakartaMalyText1Copy2}
+                                    {node.kartaMalyText1Copy2}
                                 </p>
                             </div>
                             <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
