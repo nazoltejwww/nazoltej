@@ -2,9 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 require("dotenv").config();
-// "gatsby-plugin-scroll-reveal": "^0.0.7", do package.jscon
 module.exports = {
-    // pathPrefix: `/nz`,
     siteMetadata: {
         title: `Rejestracja pojazdów na żółte tablice`,
         description: `Rejestracja pojazdów na żółte tablice. Pełna dokumentacja, opinie rzeczoznawcy.`,
@@ -12,30 +10,15 @@ module.exports = {
         siteUrl: `https://seovileo.pl/`,
     },
     plugins: [
-        // `gatsby-plugin-scroll-reveal`,
+        `gatsby-plugin-scroll-reveal`,
         "gatsby-plugin-netlify",
         {
             resolve: `gatsby-source-datocms`,
             options: {
-                // You can find your read-only API token under the Settings > API tokens
-                // section of your administrative area. Make sure to grant both CDA and CMA permissions.
                 apiToken: "921dd055d12ded6b15c8e306948b78",
-
-                // The project environment to read from. Defaults to the primary environment:
                 environment: `main`,
-
-                // If you are working on development/staging environment, you might want to
-                // preview the latest version of records instead of the published one:
                 previewMode: false,
-
-                // Disable automatic reloading of content when some change occurs on DatoCMS:
                 disableLiveReload: false,
-
-                // Custom API base URL (you probably don't need this!)
-                // apiUrl: 'https://site-api.datocms.com',
-
-                // Limits page size and can be used to avoid build timeouts.
-                // Default is 500 (also the maximum)
                 pageSize: 500,
             },
         },
@@ -73,8 +56,6 @@ module.exports = {
                 short_name: `starter`,
                 start_url: `/`,
                 background_color: `#0C0904`,
-                // This will impact how browsers show your PWA/website
-                // https://css-tricks.com/meta-theme-color-and-trickery/
                 theme_color: `#0C0904`,
                 display: `minimal-ui`,
                 icon: `src/assets/logoBrowser.png`,
