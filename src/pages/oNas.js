@@ -12,6 +12,7 @@ const oNas = ({ data }) => {
                 {allDatoCmsZdjecieTlo.edges.map(({ node }) => (
                     <div className="absolute top-0 opacity-20 max-w-[2000px] -z-30 min-h-[40rem] w-full h-full max-h-[55rem]">
                         <GatsbyImage
+                            loading="eager"
                             className="absolute opacity-90 top-0 -z-30 min-h-[40rem] h-full w-full object-center object-cover"
                             image={getImage(
                                 node.zdjecieTlaSekcjiONas.gatsbyImageData

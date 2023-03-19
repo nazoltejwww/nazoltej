@@ -17,6 +17,7 @@ const IndexPage = ({ data }) => {
                     <StaticImage
                         className="absolute top-0 -z-30 h-full w-full"
                         placeholder="blurred"
+                        loading="eager"
                         src="../assets/hero.png"
                         alt="samochód retro z otwarta maską"
                     />
@@ -63,7 +64,7 @@ const IndexPage = ({ data }) => {
                             className="absolute opacity-90 top-0 -z-30 min-h-[40rem] h-full w-full object-center object-cover"
                             placeholder="blurred"
                             src="../assets/bgAboutUs.png"
-                            alt="samochód retro z otwarta maską"
+                            alt="tło dokumenty"
                         />
                     </div>
                     <div className="py-6 md:pb-8 lg:pb-12 flex items-center justify-center">
@@ -232,7 +233,7 @@ const IndexPage = ({ data }) => {
                             className="absolute opacity-90 top-0 -z-30 min-h-[40rem] h-full w-full object-center object-cover"
                             placeholder="blurred"
                             src="../assets/bgAboutUs.png"
-                            alt="samochód retro z otwarta maską"
+                            alt="tło dokumenty"
                         />
                     </div>
                     <div className="flex items-center justify-center flex-col lg:flex-row">
