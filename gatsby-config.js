@@ -13,27 +13,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-scroll-reveal`,
-        {
-            resolve: "gatsby-plugin-netlify-cache",
-            options: {
-                cachePublic: true,
-            },
-        },
-        {
-            resolve: "gatsby-plugin-netlify",
-            options: {
-                headers: {
-                    "/*": [
-                        "Cache-Control: public, max-age=0, must-revalidate",
-                        "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
-                        "X-Frame-Options: SAMEORIGIN",
-                        "X-XSS-Protection: 1; mode=block",
-                        "X-Content-Type-Options: nosniff",
-                        "Referrer-Policy: strict-origin-when-cross-origin",
-                    ],
-                },
-            },
-        },
+        "gatsby-plugin-netlify",
         {
             resolve: `gatsby-source-datocms`,
             options: {
