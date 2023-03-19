@@ -43,12 +43,6 @@ const Admin = () => (
                 >
                     Wiadomości
                 </Link>
-                <Link
-                    to="https://app.netlify.com/sites/nazoltejwww/forms/64176fc97213720008dbcb5f"
-                    className="btn text-center mx-4 mb-4 md:mb-0"
-                >
-                    GitHub
-                </Link>
             </div>
         </section>
     </Layout>
