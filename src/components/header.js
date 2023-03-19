@@ -56,6 +56,7 @@ const Header = () => {
                         aria-label="logo"
                     >
                         <StaticImage
+                            loading="eager"
                             className="h-auto w-44"
                             alt="logo"
                             src="../assets/logo.png"
