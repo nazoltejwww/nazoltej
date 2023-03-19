@@ -2,7 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 require("dotenv").config();
-// const path = require(`path`);
+// "gatsby-plugin-scroll-reveal": "^0.0.7", do package.jscon
 module.exports = {
     // pathPrefix: `/nz`,
     siteMetadata: {
@@ -13,13 +13,33 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-scroll-reveal`,
-        `gatsby-plugin-netlify`,
+        {
+            resolve: "gatsby-plugin-netlify-cache",
+            options: {
+                cachePublic: true,
+            },
+        },
+        {
+            resolve: "gatsby-plugin-netlify",
+            options: {
+                headers: {
+                    "/*": [
+                        "Cache-Control: public, max-age=0, must-revalidate",
+                        "Strict-Transport-Security: max-age=31536000; includeSubDomains; preload",
+                        "X-Frame-Options: SAMEORIGIN",
+                        "X-XSS-Protection: 1; mode=block",
+                        "X-Content-Type-Options: nosniff",
+                        "Referrer-Policy: strict-origin-when-cross-origin",
+                    ],
+                },
+            },
+        },
         {
             resolve: `gatsby-source-datocms`,
             options: {
                 // You can find your read-only API token under the Settings > API tokens
                 // section of your administrative area. Make sure to grant both CDA and CMA permissions.
-                apiToken: '921dd055d12ded6b15c8e306948b78',
+                apiToken: "921dd055d12ded6b15c8e306948b78",
 
                 // The project environment to read from. Defaults to the primary environment:
                 environment: `main`,
