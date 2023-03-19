@@ -24,21 +24,15 @@ const Admin = () => (
             >
                 <Link
                     to="https://nazoltej-5289.admin.datocms.com/editor"
-                    className="btn text-end"
+                    className="btn text-center mx-4 mb-4 md:mb-0"
                 >
                     CMS Edytor
                 </Link>
                 <Link
                     to="https://formsubmit.io/dashboard/"
-                    className="btn text-end ml-4"
+                    className="btn text-center mx-4 mb-4 md:mb-0"
                 >
                     Formsubmit
-                </Link>
-                <Link
-                    to="https://analytics.google.com/"
-                    className="btn text-end ml-4"
-                >
-                    Analicyst
                 </Link>
             </div>
         </section>
