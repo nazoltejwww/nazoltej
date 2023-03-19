@@ -12,14 +12,14 @@ module.exports = {
         siteUrl: `https://seovileo.pl/`,
     },
     plugins: [
-        `gatsby-plugin-scroll-reveal`,
+        // `gatsby-plugin-scroll-reveal`,
         `gatsby-plugin-netlify`,
         {
             resolve: `gatsby-source-datocms`,
             options: {
                 // You can find your read-only API token under the Settings > API tokens
                 // section of your administrative area. Make sure to grant both CDA and CMA permissions.
-                apiToken: process.env.DATO_API_TOKEN,
+                apiToken: '921dd055d12ded6b15c8e306948b78',
 
                 // The project environment to read from. Defaults to the primary environment:
                 environment: `main`,
