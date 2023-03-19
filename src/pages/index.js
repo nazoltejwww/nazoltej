@@ -48,10 +48,18 @@ const IndexPage = ({ data }) => {
                         data-sal-duration="600"
                         data-sal-easing="ease"
                     >
-                        <Link aria-label="Kontakt" to="/kontakt" className="btn  text-end mr-8 ">
+                        <Link
+                            aria-label="Kontakt"
+                            to="/kontakt"
+                            className="btn  text-end mr-8 "
+                        >
                             Kontakt
                         </Link>
-                        <Link aria-label="Oferta" to="/oferta" className="btn text-end ">
+                        <Link
+                            aria-label="Oferta"
+                            to="/oferta"
+                            className="btn text-end "
+                        >
                             Oferta
                         </Link>
                     </div>
@@ -79,18 +87,18 @@ const IndexPage = ({ data }) => {
                         </h3>
                     </div>
                     <div className="flex items-center justify-center flex-col lg:flex-row">
-                        <div className="lg:w-[10%] mb-6 lg:mb-0 flex flex-row items-center lg:items-start text-center justify-center lg:justify-start flex-wrap lg:flex-col">
+                        <div className="lg:w-[20%] mb-6 lg:mb-0 flex flex-row items-center lg:items-start text-center justify-center lg:justify-start flex-wrap lg:flex-col">
                             <div
                                 data-sal="slide-up"
                                 data-sal-delay="0"
                                 data-sal-duration="600"
                                 data-sal-easing="ease"
-                                className="mr-2"
+                                className="mr-2 w-[15rem] px-4 h-[8rem]"
                             >
                                 <p className="text-amber-400 shadowScale text-5xl lg:text-7xl font-semibold">
                                     {node.liczby}
                                 </p>
-                                <p className="text-white text-xl font-semibold">
+                                <p className="text-white text-md font-semibold">
                                     {node.tekstPodLiczbami}
                                 </p>
                             </div>
@@ -99,12 +107,12 @@ const IndexPage = ({ data }) => {
                                 data-sal-delay="200"
                                 data-sal-duration="600"
                                 data-sal-easing="ease"
-                                className="mr-2"
+                                className="mr-2 w-[15rem] px-4 h-[8rem]"
                             >
                                 <p className="text-amber-400 shadowScale text-5xl lg:text-7xl font-semibold">
                                     {node.liczbyCopy1}
                                 </p>
-                                <p className="text-white text-xl font-semibold">
+                                <p className="text-white text-md font-semibold">
                                     {node.tekstPodLiczbamiCopy1}
                                 </p>
                             </div>
@@ -113,12 +121,12 @@ const IndexPage = ({ data }) => {
                                 data-sal-delay="500"
                                 data-sal-duration="600"
                                 data-sal-easing="ease"
-                                className="mr-2"
+                                className="mr-2 w-[15rem] px-4 h-[8rem]"
                             >
                                 <p className="text-amber-400 shadowScale text-5xl lg:text-7xl font-semibold">
                                     {node.liczbyCopy2}
                                 </p>
-                                <p className="text-white text-xl font-semibold">
+                                <p className="text-white text-md font-semibold">
                                     {node.tekstPodLiczbamiCopy2}
                                 </p>
                             </div>
@@ -373,6 +381,24 @@ const IndexPage = ({ data }) => {
                             className="inline-flex items-center justify-center btn"
                         >
                             FACEBOOK
+                            <svg
+                                class="w-3 h-3 ml-2 -mr-1"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </Link>
+                        <Link
+                            to="https://www.instagram.com/nazoltej.pl/"
+                            className="inline-flex items-center justify-center ml-3 btn"
+                        >
+                            INSTAGRAM
                             <svg
                                 class="w-3 h-3 ml-2 -mr-1"
                                 fill="currentColor"

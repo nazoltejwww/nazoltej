@@ -37,7 +37,7 @@ const Oferta = ({ data }) => {
                             data-sal-easing="ease"
                             class="sm:text-3xl text-2xl font-medium title-font text-gray-100"
                         >
-                            Zobacz Wszystnie Nasze Oferty
+                            Zobacz Wszystkie Nasze Oferty
                         </h1>
                     </div>
                     <div class="flex flex-wrap -m-4">

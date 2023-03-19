@@ -197,7 +197,7 @@ l25 -28 -3 -200 c-3 -196 -3 -200 -27 -219 -22 -18 -44 -19 -395 -19 l-373 0
                                         name="_redirect"
                                         type="hidden"
                                         id="name"
-                                        value="https://nażółtej.pl/dziekujemy/"
+                                        value="https://nażółtej.com/dziekujemy/"
                                     />
 
                                     <label

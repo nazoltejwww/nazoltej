@@ -69,15 +69,15 @@ const FaktyMity = ({ data }) => {
 
 export const query = graphql`
     query MyQuery {
-        allDatoCmsFaktyMity {
+        allDatoCmsFaktyMity(sort: { id: DESC }) {
             edges {
                 node {
+                    opis
                     tytul
                     zdjecie {
                         alt
                         gatsbyImageData(layout: FULL_WIDTH)
                     }
-                    opis
                 }
             }
         }
