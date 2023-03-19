@@ -3,99 +3,84 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-// import { StaticImage } from "gatsby-plugin-image";
 
 const oNas = ({ data }) => {
-    const { allDatoCmsZdjecieTlo } = data;
+    const { allDatoCmsZdjecieTlo, allDatoCmsN1 } = data;
     return (
         <Layout>
             <section className="relative px-5 py-5 lg:py-12 flex justify-center items-center">
                 {allDatoCmsZdjecieTlo.edges.map(({ node }) => (
                     <div className="absolute top-0 opacity-20 max-w-[2000px] -z-30 min-h-[40rem] w-full h-full max-h-[55rem]">
-                        {/* <StaticImage
-                            className="absolute opacity-90 top-0 -z-30 min-h-[40rem] h-full w-full object-center object-cover"
-                            placeholder="blurred"
-                            src="../assets/bgOnas.png"
-                            alt="samochód retro z otwarta maską"
-                        /> */}
                         <GatsbyImage
                             className="absolute opacity-90 top-0 -z-30 min-h-[40rem] h-full w-full object-center object-cover"
-                            image={getImage(node.zdjecieTlaSekcjiONas.gatsbyImageData)}
+                            image={getImage(
+                                node.zdjecieTlaSekcjiONas.gatsbyImageData
+                            )}
                             alt={node.zdjecieTlaSekcjiONas.alt}
                         />
                     </div>
                 ))}
-                <div className="container mx-auto text-zinc-200">
-                    <div className="flex flex-col text-center w-full mb-20">
-                        <h2
-                            data-sal="slide-left"
-                            data-sal-delay="0"
-                            data-sal-duration="600"
-                            data-sal-easing="ease"
-                            className="text-xs text-yellow-500 tracking-widest font-medium title-font mb-1"
-                        >
-                            ROOF PARTY POLAROID
-                        </h2>
-                        <h1
-                            data-sal="slide-right"
-                            data-sal-delay="0"
-                            data-sal-duration="600"
-                            data-sal-easing="ease"
-                            className="sm:text-3xl text-2xl font-medium title-font mb-4"
-                        >
-                            Master Cleanse Reliac Heirloom
-                        </h1>
-                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-                            Whatever cardigan tote bag tumblr hexagon brooklyn
-                            asymmetrical gentrify, subway tile poke
-                            farm-to-table. Franzen you probably haven't heard of
-                            them man bun deep jianbing selfies heirloom prism
-                            food truck ugh squid celiac humblebrag.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap">
-                        <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-                            <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-orange-300">
-                                Shooting Stars
+                {allDatoCmsN1.edges.map(({ node }) => (
+                    <div className="container mx-auto text-zinc-200">
+                        <div className="flex flex-col text-center w-full mb-20">
+                            <h2
+                                data-sal="slide-left"
+                                data-sal-delay="0"
+                                data-sal-duration="600"
+                                data-sal-easing="ease"
+                                className="text-xs text-yellow-500 tracking-widest font-medium title-font mb-1"
+                            >
+                                {node.malyNaglowek}
                             </h2>
-                            <p className="leading-relaxed text-base mb-4">
-                                Fingerstache flexitarian street art 8-bit
-                                waistcoat. Distillery hexagon disrupt edison
-                                bulbche.
+                            <h1
+                                data-sal="slide-right"
+                                data-sal-delay="0"
+                                data-sal-duration="600"
+                                data-sal-easing="ease"
+                                className="sm:text-3xl text-2xl font-medium title-font mb-4"
+                            >
+                                {node.naglowek}
+                            </h1>
+                            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+                                {node.opis}
                             </p>
                         </div>
-                        <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-                            <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-red-300">
-                                The Catalyzer
-                            </h2>
-                            <p className="leading-relaxed text-base mb-4">
-                                Fingerstache flexitarian street art 8-bit
-                                waistcoat. Distillery hexagon disrupt edison
-                                bulbche.
-                            </p>
-                        </div>
-                        <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-                            <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-orange-300">
-                                Neptune
-                            </h2>
-                            <p className="leading-relaxed text-base mb-4">
-                                Fingerstache flexitarian street art 8-bit
-                                waistcoat. Distillery hexagon disrupt edison
-                                bulbche.
-                            </p>
-                        </div>
-                        <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
-                            <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-red-300">
-                                Melanchole
-                            </h2>
-                            <p className="leading-relaxed text-base mb-4">
-                                Fingerstache flexitarian street art 8-bit
-                                waistcoat. Distillery hexagon disrupt edison
-                                bulbche.
-                            </p>
+                        <div className="flex flex-wrap">
+                            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                                <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-orange-300">
+                                    {node.kartaNaglowek1}
+                                </h2>
+                                <p className="leading-relaxed text-base mb-4">
+                                    {node.kartaMalyText1}
+                                </p>
+                            </div>
+                            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                                <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-red-300">
+                                    {node.kartaNaglowek1Copy1}
+                                </h2>
+                                <p className="leading-relaxed text-base mb-4">
+                                    {node.kartakartaMalyText1Copy1}
+                                </p>
+                            </div>
+                            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                                <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-orange-300">
+                                    {node.kartaNaglowek1Copy2}
+                                </h2>
+                                <p className="leading-relaxed text-base mb-4">
+                                    {node.kartakartaMalyText1Copy2}
+                                </p>
+                            </div>
+                            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+                                <h2 className="shadowScale text-lg sm:text-xl font-medium title-font mb-2 text-red-300">
+                                    {node.kartaNaglowek1Copy3}
+                                </h2>
+                                <p className="leading-relaxed text-base mb-4">
+                                    {node.kartaMalyText1Copy3}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </section>
             <section className="px-5 py-5 lg:py-12 flex justify-center items-center bg-none md:bg-black/30 text-zinc-200">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
@@ -328,6 +313,23 @@ const oNas = ({ data }) => {
 
 export const query = graphql`
     query MyQuery {
+        allDatoCmsN1 {
+            edges {
+                node {
+                    kartaNaglowek1
+                    kartaNaglowek1Copy1
+                    kartaNaglowek1Copy2
+                    kartaNaglowek1Copy3
+                    malyNaglowek
+                    naglowek
+                    kartaMalyText1
+                    kartaMalyText1Copy1
+                    kartaMalyText1Copy2
+                    kartaMalyText1Copy3
+                    opis
+                }
+            }
+        }
         allDatoCmsZdjecieTlo {
             edges {
                 node {
