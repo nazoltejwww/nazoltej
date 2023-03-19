@@ -40,16 +40,17 @@ const Oferta = ({ data }) => {
                             Zobacz Wszystnie Nasze Oferty
                         </h1>
                     </div>
-                    <div
-                        class="flex flex-wrap -m-4"
-                    >
+                    <div class="flex flex-wrap -m-4">
                         {allDatoCmsOferty.edges.map(({ node }) => (
                             <div class="p-4 md:w-1/3">
-                                <div data-sal="slide-down"
-                            data-sal-delay="0"
-                            data-sal-duration="600"
-                            data-sal-easing="ease" class="flex rounded-lg h-full  p-8 flex-col bg-white">
-                                    <div  class="flex items-center mb-3">
+                                <div
+                                    data-sal="slide-down"
+                                    data-sal-delay="0"
+                                    data-sal-duration="600"
+                                    data-sal-easing="ease"
+                                    class="flex rounded-lg h-full  p-8 flex-col bg-white"
+                                >
+                                    <div class="flex items-center mb-3">
                                         <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-yellow-500 text-white flex-shrink-0">
                                             <svg
                                                 fill="none"
