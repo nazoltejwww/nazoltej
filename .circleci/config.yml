@@ -13,6 +13,6 @@ jobs:
       - run: npm run build
     
 workflows:
-  bulding:
+  test_my_app:
     jobs:
       - bulid
