@@ -22,7 +22,6 @@
         text-shadow: 0 0 0 orange;
     }
 }
-
 .animLoading {
     animation: animLoading 2s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
         alternate-reverse both;
