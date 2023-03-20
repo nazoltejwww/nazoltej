@@ -12,9 +12,15 @@ jobs:
           override-ci-command: npm install
       - run: npm run build
       - run: npm install --save-dev @datocms/cli
-      - run: npx @datocms/cli generate-preview --token 921dd055d12ded6b15c8e306948b78 --environment preview
-      - run: npx @datocms/cli deploy-preview --token 921dd055d12ded6b15c8e306948b78 --environment preview
-      - run: npx @datocms/cli deploy-site --token 921dd055d12ded6b15c8e306948b78
+      - run:
+        name: Notify DatoCMS about the status of the job
+        command: 'curl -X POST --data-binary "{\"payload\": { \"branch\": \"$CIRCLE_BRANCH\", \"status\": \"failed\" } }" https://webhooks.datocms.com/qWQ5pYVat6/deploy-results'
+        when: on_fail
+
+      - run:
+        name: Notify DatoCMS about the status of the job
+        command: 'curl -X POST --data-binary "{\"payload\": { \"branch\": \"$CIRCLE_BRANCH\", \"status\": \"success\" } }" https://webhooks.datocms.com/qWQ5pYVat6/deploy-results'
+        when: on_success
     
 workflows:
   test_my_app:
