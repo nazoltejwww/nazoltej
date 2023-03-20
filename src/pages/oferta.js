@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const Oferta = ({ data }) => {
     const { allDatoCmsOferty } = data;
     return (
+        
         <Layout>
             <section class="text-gray-600 body-font">
                 <div className="absolute max-w-[2000px] top-0 -z-30 min-h-[40rem] h-full w-full">

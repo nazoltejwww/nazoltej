@@ -1,0 +1,20 @@
+- pipeline: "DatoCMS"
+  events:
+  - type: "PUSH"
+    refs:
+    - ":default"
+    - "refs/heads/main"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Execute npm test"
+    type: "BUILD"
+    docker_image_name: "library/node"
+    docker_image_tag: "18"
+    execute_commands:
+    - "# yarn install"
+    - "npm install"
+    - "npm run build"
+    volume_mappings:
+    - "/:/buddy/nazoltej"
+    cache_base_image: true
+    shell: "BASH"
