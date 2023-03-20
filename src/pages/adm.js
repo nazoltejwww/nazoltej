@@ -38,7 +38,7 @@ const Admin = () => (
                     CMS Edytor
                 </Link>
                 <Link
-                    to="https://app.netlify.com/sites/nazoltej/forms/64176fc97213720008dbcb5f"
+                    to="https://app.netlify.com"
                     className="btn text-center mx-4 mb-4 md:mb-0"
                 >
                     Wiadomości
