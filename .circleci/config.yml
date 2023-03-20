@@ -15,4 +15,4 @@ jobs:
 workflows:
   bulding:
     jobs:
-      - test
+      - bulid
