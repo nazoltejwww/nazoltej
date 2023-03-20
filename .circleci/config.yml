@@ -1,46 +1,22 @@
-machine:
-  node:
-    version: 6.7.0
-dependencies:
-  override:
-    # if your project uses Yarn as package manager, replace "npm install" with "yarn"
-    - npm install
-    # download latest version of hugo
-    - wget https://github.com/spf13/hugo/releases/download/v0.19/hugo_0.19-64bit.deb
-    # install it
-    - sudo dpkg -i hugo*.deb
-test:
-  override:
-    # first dump all the remote content as local files
-    - ./node_modules/.bin/dato dump
-    # then generate the website
-    - hugo
-deployment:
-  production:
-    branch: main
-    commands:
-      - aws s3 sync public s3://your-bucket-name/ --delete
-
-
-# version: '2.1'
-# orbs:
-#   node: circleci/node@5.1.0
-# jobs:
-#   test:
-#     executor: node/default
-#     steps:
-#       - checkout
-#       - run: sudo npm install -g npm@latest
-#       - node/install-packages:
-#           cache-path: ~/project/node_modules
-#           override-ci-command: npm install
-#       - run: npm run build
-#       - run: npm install --save-dev @datocms/cli
-#       - run: npx @datocms/cli generate-preview --token 921dd055d12ded6b15c8e306948b78 --environment preview
-#       - run: npx @datocms/cli deploy-preview --token 921dd055d12ded6b15c8e306948b78 --environment preview
-#       - run: npx @datocms/cli deploy-site --token 921dd055d12ded6b15c8e306948b78
+version: '2.1'
+orbs:
+  node: circleci/node@5.1.0
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - run: sudo npm install -g npm@latest
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: npm run build
+      - run: npm install --save-dev @datocms/cli
+      - run: npx @datocms/cli generate-preview --token 921dd055d12ded6b15c8e306948b78 --environment preview
+      - run: npx @datocms/cli deploy-preview --token 921dd055d12ded6b15c8e306948b78 --environment preview
+      - run: npx @datocms/cli deploy-site --token 921dd055d12ded6b15c8e306948b78
     
-# workflows:
-#   test_my_app:
-#     jobs:
-#       - test
+workflows:
+  test_my_app:
+    jobs:
+      - test
